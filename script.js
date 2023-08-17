@@ -69,15 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-
-function updateTotal() {
-    const total = counts.reduce((acc, count, index) => acc + count * prices[index], 0);
-    const discountedTotal = applyDiscount(total); // นำ total ไปคำนวณส่วนลด
-    totalElement.textContent = discountedTotal.toFixed(2); // แสดงราคาที่ถูกปรับแล้ว
-}
-
-updateTotal(); // เรียกใช้เพื่อแสดงราคาเริ่มต้น
-
 decreaseButtons.forEach((button, index) => {
     button.addEventListener('click', () => {
         if (counts[index] > 0) {
@@ -95,5 +86,11 @@ increaseButtons.forEach((button, index) => {
         updateTotal();
     });
 });
+
+function updateTotal() {
+    const total = counts.reduce((acc, count, index) => acc + count * prices[index], 0);
+    const discountedTotal = applyDiscount(total);
+    totalElement.textContent = discountedTotal.toFixed(2);
+}
 
 updateTotal();
