@@ -1,0 +1,139 @@
+body{
+    background-color: rgb(255, 255, 255);
+    padding:0px;
+    margin: 0px;
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, 
+    "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
+    "Helvetica Neue", Helvetica, Arial, sans-serif
+}
+
+.grid-container {
+    display: grid;
+    column-gap: 30px;
+    row-gap: 30px;
+    gap: 30px 30px;
+    margin: 5%;
+    justify-content: space-between;
+    
+}
+.carousel-inner{
+    max-width: 50%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+.img-center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.item1{
+    background-image: url("/image/logi.png");
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    width: 100%;
+    height: 450px;
+}
+.img-sell{
+    width: 250px;
+    height: auto;
+}
+.product {
+    text-align: center;
+    margin: 0 200px;
+}
+
+.product img {
+    max-width: 100%;
+
+}
+
+.price {
+    font-weight: bold;
+}
+
+.quantity {
+    margin-top: 5px;
+}
+
+.quantity button {
+    background-color: #b7b7b7;
+    border: none;
+    padding: 5px 8px;
+    cursor: pointer;
+}
+
+.total-price {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
+.item2{
+    background-color: rgba(255, 255, 255, 0.634);
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    width: 100%;
+    height: 300px;
+}
+.item3{
+    background-color: rgba(255, 255, 255, 0.634);
+    grid-column-start: 4;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    width: 100%;
+    height: 300px;
+}
+.item4{
+    background-color: rgba(255, 255, 255, 0.634);
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    width: 100%;
+    height: 250px;
+}
+.item5{
+    background-color: rgba(255, 255, 255, 0.634);
+    grid-column-start: 4;
+    grid-column-end: 6;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    width: 100%;
+    height: 300px;
+}
+.item6{
+    background-color: rgba(37, 83, 129, 0.634);
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 4;
+    grid-row-end: 4;
+    width: 100%;
+    height: 70px;
+}
+.item7{
+    background-color: rgba(255, 255, 255, 0.634);
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 5;
+    grid-row-end: 5;
+    width: 100%;
+    height: 150px;
+}
+.item8{
+    background-color: rgba(255, 255, 255, 0.634);
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 6;
+    grid-row-end: 6;
+    width: 100%;
+    height: 70px;
+}
+
+.Swal{
+    background-color: rgba(255, 255, 255, 0.634);
+}

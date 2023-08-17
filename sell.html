@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Decorate/color_web.css">
+    <link rel="stylesheet" href="/Decorate/modal.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>FarrewShop</title>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="item1">
+          
+            <div class="container">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                  <!-- Indicators -->
+                  <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                  </ol>
+              
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner">
+              
+                    <div class="item active">
+                      <img src="/image/GPXS.jpg" alt="G PRO X SUPERLIGHT" style="width:100%;">
+                      <div class="carousel-caption">
+                        <h3>G PRO X SUPERLIGHT</h3>
+                      </div>
+                    </div>
+
+                    <div class="item">
+                      <img src="/image/g703.jpg" alt="G703 Wireless" style="width:100%;">
+                      <div class="carousel-caption">
+                         <h3>G703 Wireless</h3>
+                      </div>
+                    </div>
+              
+                    <div class="item">
+                      <img src="/image/g305.jpg" alt="G304 Wireless" style="width:100%;">
+                      <div class="carousel-caption">
+                          <h3>G304 Wireless</h3>
+                      </div>
+                    </div>
+
+                    <div class="item">
+                      <img src="/image/g102.jpg" alt="G102" style="width:100%;">
+                      <div class="carousel-caption">
+                          <h3>G102</h3>
+                      </div>
+                    </div>
+
+                  </div>
+              
+                  <!-- Left and right controls -->
+                  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+              </div>
+        </div>
+        
+        <div class="item2">
+            <div class="product">
+              <img class="img-sell" src="/image/GPXS.jpg" alt="Product 1">
+              <h2>G PRO XS</h2>
+              <p class="price">Price: 4,190</p>
+              <div class="quantity">
+                  <button class="decrease">-</button>
+                  <span class="count">0</span>
+                  <button class="increase">+</button>
+              </div>
+            </div>
+          </div>
+
+        <div class="item3">
+          <div class="product">
+            <img class="img-sell" src="/image/g703.jpg" alt="Product 2">
+            <h2>G703 Wireless</h2>
+            <p class="price">Price: 3,090</p>
+            <div class="quantity">
+                <button class="decrease">-</button>
+                <span class="count">0</span>
+                <button class="increase">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="item4">
+          <div class="product">
+            <img class="img-sell" src="/image/g305.jpg" alt="Product 3">
+            <h2>G304 Wireless</h2>
+            <p class="price">Price: 1,190</p>
+            <div class="quantity">
+                <button class="decrease">-</button>
+                <span class="count">0</span>
+                <button class="increase">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="item5">
+          <div class="product">
+            <img class="img-sell" src="/image/g102.jpg" alt="Product 4">
+            <h2>G102</h2>
+            <p class="price">Price: 590</p>
+            <div class="quantity">
+                <button class="decrease">-</button>
+                <span class="count">0</span>
+                <button class="increase">+</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="item6">
+          <p class="total-price">Total Price: <span id="total">0.00</span></p>
+          <script src="/script.js"></script>
+
+          <div class="right">
+            <button type="button" value="นโยบายการสั่งซื้อ" class="right" id="myBtn">นโยบายการสั่งซื้อสินค้า</button>
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+              <!-- Modal content -->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <span class="close">&times;</span>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    นโยบายการซื้อสินค้า <br>
+                    ท่านสามารถสั่งซื้อสินค้าได้จากช่องทางดังนี้<br>
+                    
+                    <ul>โดยแจ้งชื่อ ที่อยู่ เบอร์โทรที่ติดต่อสะดวก<br>
+                    รายการสินค้าที่ต้องการซื้อโดยระบุรุ่น  ขนาด สี (ถ้ามี) <br>
+                    จำนวนสินค้าที่ต้องการ<br>
+                    การรับสินค้าในกรณีให้จัดส่งโปรดแจ้งสถานที่ ชื่อผู้รับสินค้า และเบอร์ติดต่อ  <br>
+                    ขอสงวนสิทธิ์การขาย กรณีไม่แจ้งชื่อ ที่อยู่ เบอร์ติดต่อกลับ<br></ul>
+                    เงื่อนไขการยกเลิกคำสั่งซื้อ<br>
+                    <ul>ท่านสามารถยกเลิกธุรกรรมการสั่งซื้อได้ ในกรณีที่สินค้ายังไม่ถูกส่งออกไปเท่านั้น<br>
+                    ในการยกเลิกคำสั่งซื้อ มีค่าดำเนินการ 15% จากราคาตั้ง และบวกภาษีมูลค่าเพิ่ม 7% <br>
+                    บริษัทฯจะคืนค่าสินค้าหลังจากหักค่าดำเนินการแล้ว โดยโอนเงินเข้าบัญชีที่มีชื่อผู้สั่งสินค้าเป็นชื่อเจ้าของบัญชีเท่านั้น<br></ul>
+                  </p>
+                  
+                </div>
+                <div class="modal-footer"onclick="area()"></div>
+                <script src="/modal.js"></script>
+              </div>
+            </div>
+          </div>
+        </div><br><br>
+
+        
+        <div class="item7">
+          <label for="address">แบบฟอร์มรายละเอียด</label>
+          <label for="address"></label>
+          <textarea name="address" id="address" type="text" style="width:100%; height: 100px;" maxlength="1000" placeholder="ที่อยู่/รายระเอียด"></textarea><br>
+        </div>
+
+        <div class="item8">
+          <button type="button" class="right2" id="buy" style="color: rgb(220, 129, 44);">สั่งซื้อ</button>
+          <div id="mybuy" class="modal">
+            <div class="modal-content">
+              <div class="modal-header2">
+                <span class="cl">&times;</span>
+              </div>
+              <div class="modal-body2"style>
+                <h3>สั่งซื้อหรือไม่</h3>
+                <ul id="cart-items"></ul>
+
+                <button type="button" style="color: rgb(247, 11, 11);" onclick="cancelfunction()">ยกเลิก</button>
+                <button type="button" onclick="confirmfunction()">ตกลง</button>
+
+              </div>
+              <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+              <div class="modal-footer2">
+              </div>
+            </div>
+          <script src="/modal.js"></script>
+        </div>
+        
+        <script src="/script.js"></script>
+
+        </div>
+    
+    </div>
+</body>
+</html>
