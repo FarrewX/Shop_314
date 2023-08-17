@@ -1,4 +1,3 @@
-
 const decreaseButtons = document.querySelectorAll('.decrease');
 const increaseButtons = document.querySelectorAll('.increase');
 const countElements = document.querySelectorAll('.count');
@@ -7,9 +6,9 @@ const totalElement = document.getElementById('total');
 
 let counts = [0, 0, 0, 0]; // จำนวนสินค้าของแต่ละรายการ
 const prices = [4190, 3090, 1190, 590]; // ราคาสินค้าของแต่ละรายการ
-
+const cartItems = [];
 document.addEventListener("DOMContentLoaded", function () {
-    const cartItems = [];
+    
     const products = [
       { name: 'G PRO XS', price: 4190 },
       { name: 'G703 Wireless', price: 3090 },
@@ -18,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
     
     const buyButton = document.getElementById("buy");
-  buyButton.addEventListener("click", () => {
+    buyButton.addEventListener("click", () => {
     if (cartItems.some(count => count > 0)) {
       showModal(); // แสดงตัวเลือกการสั่งซื้อ
     } else {
@@ -69,12 +68,15 @@ document.addEventListener("DOMContentLoaded", function () {
       totalElement.textContent = `${total.toFixed(2)} บาท`;
     }
   });
-  
+
 
 function updateTotal() {
     const total = counts.reduce((acc, count, index) => acc + count * prices[index], 0);
-    totalElement.textContent = total.toFixed(2);
+    const discountedTotal = applyDiscount(total); // นำ total ไปคำนวณส่วนลด
+    totalElement.textContent = discountedTotal.toFixed(2); // แสดงราคาที่ถูกปรับแล้ว
 }
+
+updateTotal(); // เรียกใช้เพื่อแสดงราคาเริ่มต้น
 
 decreaseButtons.forEach((button, index) => {
     button.addEventListener('click', () => {
@@ -95,4 +97,3 @@ increaseButtons.forEach((button, index) => {
 });
 
 updateTotal();
-
