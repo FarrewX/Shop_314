@@ -55,17 +55,27 @@ document.addEventListener("DOMContentLoaded", function () {
       cartList.innerHTML = "";
   
       let total = 0;
+      let totalDiscounted = 0;
       cartItems.forEach((count, index) => {
         if (count > 0) {
           const listItem = document.createElement("li");
           listItem.textContent = `${products[index].name}: ${products[index].price} บาท x ${count}`;
           cartList.appendChild(listItem);
           total += products[index].price * count;
+          totalDiscounted += calculateDiscountedPrice(products[index].price, count); // เพิ่มราคาที่คำนวณแล้วด้วยส่วนลด
         }
       });
+      function calculateDiscountedPrice(price, quantity) {
+        const subTotal = price * quantity;
+        if (subTotal >= 1000) {
+          const discount = subTotal * 0.1; // คำนวณส่วนลด 10%
+          return subTotal - discount;
+        }
+        return subTotal;
+      }
   
       const totalElement = document.getElementById("total");
-      totalElement.textContent = `${total.toFixed(2)} บาท`;
+totalElement.textContent = `${totalDiscounted.toFixed(2)} บาท`; // แสดงราคาที่คำนวณแล้วด้วยส่วนลด
     }
   });
 
@@ -84,13 +94,11 @@ increaseButtons.forEach((button, index) => {
         counts[index]++;
         countElements[index].textContent = counts[index];
         updateTotal();
+
     });
 });
 
-function updateTotal() {
-    const total = counts.reduce((acc, count, index) => acc + count * prices[index], 0);
-    const discountedTotal = applyDiscount(total);
-    totalElement.textContent = discountedTotal.toFixed(2);
-}
+
 
 updateTotal();
+
